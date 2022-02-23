@@ -109,7 +109,6 @@ const controlServings = function (newServings) {
   model.updateServings(newServings);
 
   // Update the recipeView (re-rendering the recipe)
-  // recipeView.render(model.state.recipe);
   recipeView.update(model.state.recipe);
 };
 
@@ -185,10 +184,6 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
-const newFeature = function () {
-  console.log('Welcome to the Application');
-};
-
 /////////////////////////////////////////////////////
 // PUBLISHER-SUBSCRIBER PATTERN
 const init = function () {
@@ -199,6 +194,5 @@ const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
-  newFeature();
 };
 init();
